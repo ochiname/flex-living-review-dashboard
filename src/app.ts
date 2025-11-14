@@ -8,7 +8,9 @@ import { swaggerSpec } from './swagger';
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://flex-reviewdashboard.netlify.app'
+}));
 app.use(express.json());
 app.use(helmet({contentSecurityPolicy: {
       useDefaults: true, // ensures proper fallbacks (no warning)
